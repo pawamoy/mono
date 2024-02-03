@@ -1,0 +1,36 @@
+site_name: My Docs
+
+theme:
+  name: material
+  palette:
+  - media: "(prefers-color-scheme)"
+    toggle:
+      icon: material/brightness-auto
+      name: Switch to light mode
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
+    primary: teal
+    accent: purple
+    toggle:
+      icon: material/weather-sunny
+      name: Switch to dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    primary: black
+    accent: lime
+    toggle:
+      icon: material/weather-night
+      name: Switch to system preference
+
+plugins:
+- mkdocstrings:
+    default_handler: typescript
+    handlers:
+      typescript:
+        options:
+          base_file_path: packages
+          heading_level: 1
+          show_symbol_type_toc: true
+          show_symbol_type_heading: true
+          show_root_heading: true
+          separate_signature: true

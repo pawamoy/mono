@@ -2,6 +2,14 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "mkdocs serve",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "mkdocs",
+      "args": ["serve", "-v"],
+      "justMyCode": false
+    },
+    {
       "name": "File",
       "type": "node",
       "request": "launch",
@@ -18,7 +26,9 @@
       "preLaunchTask": "Build for debugging",
       "runtimeExecutable": "npx",
       "program": "mono-jasmine",
-      "args": ["${file}"],
+      "args": [
+        "${file}"
+      ],
       "cwd": "${command:mono.package}",
       "resolveSourceMapLocations": [
         "!**/internal/deps/**",

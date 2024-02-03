@@ -39,6 +39,7 @@ v8-deopt-viewer
 # Documentation
 docs.json
 docs
+.venv/
 
 # -----------------------------------------------------------------------------
 # General
