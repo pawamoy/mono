@@ -1,5 +1,34 @@
 # Mono repository utilities
 
+**Working on a TypeScript handler for mkdocstrings.**
+
+```bash
+# clone repositories
+git clone git@github.com/pawamoy-insiders/mkdocstrings-typescript
+git clone git@github.com/pawamoy-insiders/griffe-typedoc
+git clone https://github.com/pawamoy/mono
+
+# switch to right branch
+cd mono
+git switch spike/typedoc
+
+# install NPM deps and build packages
+npm install
+npx lerna run build
+
+# install Python deps
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install mkdocs-material
+python -m pip install -e ../mkdocstrings-typescript
+python -m pip install -e ../griffe-typedoc
+
+# serve docs
+python -m mkdocs serve
+```
+
+---
+
 This repository provides a collection of tools optimized for handling mono
 repositories. They reflect the workflows and standards I, [@squidfunk], apply
 to my TypeScript projects, including those in organizations I own.
